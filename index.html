@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inscripción a Cursos Tecnológicos</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="contenedor">
+    <header class="encabezado">
+      <h1>Inscripción a Cursos Tecnológicos</h1>
+      <p class="nota">Elige tu próximo reto de aprendizaje y potencia tus habilidades tecnológicas.</p>
+    </header>
+
+    <!-- Caja de mensajes de confirmación o errores generales -->
+    <div id="resultado" aria-live="polite" class="mensaje-box hidden"></div>
+
+    <form id="formulario" novalidate>
+      <!-- Nombre Completo -->
+      <div class="form-group" id="group-nombre">
+        <label for="nombre">Nombre completo *</label>
+        <input id="nombre" name="nombre" type="text" placeholder="Ej. Ana María Gómez">
+        <span class="error-text" id="error-nombre"></span>
+      </div>
+
+      <!-- Correo Electrónico -->
+      <div class="form-group" id="group-correo">
+        <label for="correo">Correo electrónico *</label>
+        <input id="correo" name="correo" type="email" placeholder="ejemplo@dominio.com">
+        <span class="error-text" id="error-correo"></span>
+      </div>
+
+      <!-- Edad -->
+      <div class="form-group" id="group-edad">
+        <label for="edad">Edad *</label>
+        <input id="edad" name="edad" type="number" min="14" placeholder="Debe ser al menos 14 años">
+        <span class="error-text" id="error-edad"></span>
+      </div>
+
+      <!-- Curso de Interés -->
+      <div class="form-group" id="group-curso">
+        <label for="curso">Curso de interés *</label>
+        <select id="curso" name="curso">
+          <option value="">Selecciona un curso</option>
+          <option value="HTML">HTML</option>
+          <option value="CSS">CSS</option>
+          <option value="JavaScript">JavaScript</option>
+        </select>
+        <span class="error-text" id="error-curso"></span>
+      </div>
+
+      <!-- Modalidad -->
+      <div class="form-group" id="group-modalidad">
+        <fieldset>
+          <legend>Modalidad *</legend>
+          <div class="radio-group">
+            <label>
+              <input type="radio" name="modalidad" value="Presencial"> Presencial
+            </label>
+            <label>
+              <input type="radio" name="modalidad" value="Virtual"> Virtual
+            </label>
+          </div>
+        </fieldset>
+        <span class="error-text" id="error-modalidad"></span>
+      </div>
+
+      <!-- Comentarios Opcionales -->
+      <div class="form-group">
+        <label for="comentarios">Comentarios (opcional)</label>
+        <textarea id="comentarios" name="comentarios" maxlength="200" rows="3" placeholder="Comentarios adicionales..."></textarea>
+      </div>
+
+      <!-- Botones -->
+      <div class="button-group">
+        <button type="submit" id="btnEnviar">Enviar inscripción</button>
+        <button type="reset" class="secundario" id="btnLimpiar">Limpiar</button>
+      </div>
+    </form>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

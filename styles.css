@@ -1,0 +1,221 @@
+/* Variables y Estilos Generales */
+:root {
+  --primary: #1756a9;
+  --primary-hover: #103e7c;
+  --secondary: #596579;
+  --secondary-hover: #414b5a;
+  --bg-main: #0f172a;
+  --card-bg: #1e293b;
+  --text-main: #f8fafc;
+  --text-muted: #94a3b8;
+  --border-color: #334155;
+  --error-color: #ef4444;
+  --success-color: #22c55e;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+body {
+  background-color: var(--bg-main);
+  color: var(--text-main);
+  padding: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* Contenedor Principal */
+.contenedor {
+  max-width: 580px;
+  width: 100%;
+  padding: 32px;
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+}
+
+/* Encabezado */
+.encabezado {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+h1 {
+  color: #38bdf8;
+  font-size: 26px;
+  margin-bottom: 8px;
+}
+
+.nota {
+  color: var(--text-muted);
+  font-size: 0.95em;
+  line-height: 1.5;
+}
+
+/* Campos de Formulario */
+.form-group {
+  margin-bottom: 18px;
+}
+
+label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 6px;
+  font-size: 0.9em;
+  color: #cbd5e1;
+}
+
+input:not([type="radio"]),
+select,
+textarea {
+  width: 100%;
+  padding: 11px;
+  background-color: #0f172a;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  color: var(--text-main);
+  font-size: 0.95em;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Estado Focus e Interacción */
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: #38bdf8;
+  box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.2);
+}
+
+/* Corrección de legibilidad para opciones de select */
+select option {
+  background-color: #0f172a;
+  color: #f8fafc;
+}
+
+/* Fieldset para Modalidad */
+fieldset {
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  padding: 12px 16px;
+}
+
+legend {
+  font-weight: 600;
+  font-size: 0.9em;
+  color: #cbd5e1;
+  padding: 0 6px;
+}
+
+.radio-group {
+  display: flex;
+  gap: 20px;
+  margin-top: 6px;
+}
+
+.radio-group label {
+  font-weight: normal;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* Clases de Validación Visual */
+.form-group.success input,
+.form-group.success select {
+  border-color: var(--success-color) !important;
+}
+
+.form-group.error input,
+.form-group.error select {
+  border-color: var(--error-color) !important;
+}
+
+.error-text {
+  color: #f87171;
+  font-size: 0.8em;
+  margin-top: 4px;
+  display: block;
+  min-height: 16px;
+}
+
+/* Botones */
+.button-group {
+  display: flex;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+button {
+  flex: 1;
+  padding: 12px 16px;
+  border: none;
+  border-radius: 6px;
+  background-color: var(--primary);
+  color: white;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+button:hover {
+  background-color: var(--primary-hover);
+}
+
+button.secundario {
+  background-color: var(--secondary);
+}
+
+button.secundario:hover {
+  background-color: var(--secondary-hover);
+}
+
+/* Mensajes de Resultado */
+.mensaje-box {
+  padding: 14px;
+  border-radius: 6px;
+  margin-bottom: 20px;
+  font-size: 0.9em;
+  line-height: 1.5;
+}
+
+.mensaje-box.exito {
+  background-color: rgba(34, 197, 94, 0.15);
+  color: #4ade80;
+  border: 1px solid var(--success-color);
+}
+
+.mensaje-box.error-summary {
+  background-color: rgba(239, 68, 68, 0.15);
+  color: #fca5a5;
+  border: 1px solid var(--error-color);
+}
+
+.hidden {
+  display: none;
+}
+
+/* Adaptación Responsive */
+@media (max-width: 480px) {
+  body {
+    padding: 12px;
+  }
+  .contenedor {
+    padding: 20px;
+  }
+  h1 {
+    font-size: 22px;
+  }
+  .button-group {
+    flex-direction: column;
+  }
+}
